@@ -260,9 +260,8 @@ void lutil_xchg_seq_free(lutil_xchg_seq_t p)
 
   g_hash_table_destroy(p->htable);
   g_regex_unref(p->re);
-  g_free(p);
-
   memset(p, 0, sizeof(struct _lutil_xchg_seq_s));
+  g_free(p);
 }
 
 /* Replace the sequences in the given string (g_free the returned string). */

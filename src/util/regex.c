@@ -194,9 +194,8 @@ void lutil_regex_op_free(lutil_regex_op_t op)
   g_free(op->sequence);
   g_free(op->regex);
   g_free(op->mode);
-  g_free(op);
-
   memset(op, 0, sizeof(struct _lutil_regex_op_s));
+  g_free(op);
 }
 
 static gchar *_op_m(lutil_regex_op_t op, const gchar *s)
